@@ -15,7 +15,7 @@ Acceptable PRs
 Unacceptable PRs
 - updates to existing definitions
 
-[A](#A) [B](#B) [C](#C) [D](#D)
+[A](#A) [B](#B) [C](#C) [D](#D) ...
 
 # A
 
@@ -63,6 +63,16 @@ require a bearer to prove possession of cryptographic key material (proof-of-pos
 
 See also [Access Token](#Access_Token), [DPoP Proof JWT](#DPoP_Proof_JWT)
 # C
+
+## Credential 
+
+### [NIST 800-63-3 §A.1 Credential](https://pages.nist.gov/800-63-3/sp800-63-3.html)
+An object or data structure that authoritatively binds an identity - via an identifier or identifiers - and (optionally) additional attributes, to at least one authenticator possessed and controlled by a subscriber.
+
+While common usage often assumes that the subscriber maintains the credential, these guidelines also use the term to refer to electronic records maintained by the CSP that establish binding between the subscriber’s authenticator(s) and identity.
+
+### [W3C Verifiable Credentials Data Model v1.1 Credential](https://www.w3.org/TR/vc-data-model/#dfn-credential)
+A set of one or more claims made by an issuer. A verifiable credential is a tamper-evident credential that has authorship that can be cryptographically verified. Verifiable credentials can be used to build verifiable presentations, which can also be cryptographically verified. The claims in a credential can be about different subjects.
 
 # D
 
