@@ -61,7 +61,7 @@ A security token with the property that any party in possession of the token (a 
 party in possession of it can.  Using a bearer token does not
 require a bearer to prove possession of cryptographic key material (proof-of-possession)
 
-See also [Access Token](#Access_Token), [DPoP Proof JWT](#DPoP_Proof)
+See also [Access Token](#Access_Token), [DPoP Proof JWT](#DPoP_Proof_JWT)
 # C
 
 # D
