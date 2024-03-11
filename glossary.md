@@ -1,5 +1,7 @@
 # IETF Terminology
 
+# THIS IS A PROOF OF CONCEPT FOR WHAT A GLOSSARY COULD LOOK LIKE #
+
 ## Introduction
 
 This is a living document that captures how key terms are used in IETF and other SDO documents. 
