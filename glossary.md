@@ -27,20 +27,24 @@ Updates are processed differently depending on if the update is referencing a fi
 
 ### References to Finalized Documents
 1. Anyone can propose a new term, definition, or reference by creating a GitHub pull request (PR). A GitHub Action will then run the initial checks that the update meets the update requirements:
-* a. Does not delete a term, definition, or reference for final documents.
-* b. Does not update an existing term.
-* c. New definitions MUST either:
-  
-** exist in a final document
-** consensus on the definition has been reached on the mail list of the working group that created the document
+- a. Does not delete a term, definition, or reference for final documents.
+- b. Does not update an existing term.
+- c. New definitions MUST either: 
+  - exist in a final document
+  - consensus on the definition has been reached on the mail list of the working group that created the document
 
 2. A member of the Glossary Team will review the PR and provide feedback to the proposal or submit the PR to the publication queue.
+
 3. Anyone can subscribe to be notified when a PR is promoted to be in the publication queue, and provide comments to the PR.
+
 4. After a minimum of two weeks, a separate member of the Glossary Team will review the PR and will provide feedback and return the PR to the proposer or publish the PR.
+
 5. When a PR is published, a GitHub Action is run that updates the official glossary document.
 
 ### References to Draft Documents
+
 1. A draft author can propose a new reference to their draft for an existing term, an existing definition, a new term, or a placeholder for a new definition, or delete a reference to their draft. The draft MUST include a reference to the Glossary.
+
 2. A member of the Glossary Team will review the PR and provide feedback to the proposal, or publish the PR to the official glossary document.
 
 ## Draft Documents and the Glossary
@@ -59,9 +63,10 @@ The creation of the glossary was motivated by confusion of identity related term
 ## Open Questions
 
 Locations: 
-* GitHub repository org and name
-* Official hostname and path (ietf.org or rfc-editor.org)
-* Definition reference format
+- GitHub repository org and name
+- Official hostname and path
+  - ietf.org or rfc-editor.org
+- Definition reference format
 
 Source Document Format:
 * Markdown?
@@ -79,16 +84,16 @@ Glossary Team
 ## FAQ
 
 Q1: Can the glossary be normatively referenced?
-No. The glossary is intended for informative references.
+- No. The glossary is intended for informative references.
 
 Q2: How will consensus be achieved on the definition of a term?
-The glossary project is not creating definitions, it is gathering existing definitions from existing documents. If a term is used in a finalized document, then the individuals that created that document will gather consensus on the definition on how the term was used in that document.
+- The glossary project is not creating definitions, it is gathering existing definitions from existing documents. If a term is used in a finalized document, then the individuals that created that document will gather consensus on the definition on how the term was used in that document.
 
 Q3: Why not allow working documents to define new terms before they are published?
-We don't want other documents  to reference a term and definitions that may change. Only terms / definitions that have been finalized are included in the Glossary, and those are never updated.
+- We don't want other documents  to reference a term and definitions that may change. Only terms / definitions that have been finalized are included in the Glossary, and those are never updated.
 
 Q4: How will new terms and definitions from working documents be added to the Glossary?
-When a working document is finalized, the new term, or new definition to an existing term will be added to the glossary.
+- When a working document is finalized, the new term, or new definition to an existing term will be added to the glossary.
 
 
 
