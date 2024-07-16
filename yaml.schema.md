@@ -43,8 +43,7 @@ definitions: # A list of definitions from published RFC's, as well as the docume
 Links to other documents are used in the `draft-definitions` and `definitions` sections. Each link has three components:
 
 - `url`: The URL of the document. This must be a valid URL, and should point to the specific document that uses the term.
-- `sdo`: The standards development organization that published the document. This is a string, and can be any value,
-  with several reserved values.
+- `sdo`: The standards development organization that published the document. This is an enum eg. [`ietf`,`w3c`,`oidc`,`iso`,`oasis`] etc. 
 - `label`: The label of the document, as it is commonly referred to. This is a string, and can be any value.
 
 Note that, given certain standards organizations, the url may have special meaning. For example, the source of truth
