@@ -1,4 +1,8 @@
-# Glossary
+# IETF Glossary
+
+*This is a proposal for a glossary of terms used in IETF RFCs*
+
+## Introduction
 
 The purpose of this glossary is to collect terms from existing, published standards documents, and provide a place from
 which they can be referenced. Specific terms can have more than one definition, as long as it comes from a published
@@ -9,64 +13,99 @@ The intent of this glossary is to provide a single source of truth for the defin
 to provide a method by which other uses of a specific definition may be easily discovered. With any luck, this will lead
 to a convergence of vocabulary usage.
 
-## Data Organization
+[Here is a sample](./sample.glossary.md)
 
-## Folder Structure
-TBD
+## Motivation
 
-## Schema
+The development of standards in the IETF requires extensive discussions that are essential to ensure consensus on the issues at hand. Many of these standards introduce concepts that are novel, and existing terms are used to describe the novel concept. While the core participants are usually aligned on the specific meaning behind a term, they may not be aware of other definitions of a term. Infrequent participants may have a different definition in mind when encountering a term, leading to misunderstandings and a lack of consensus.
 
-Each term in the glossary is represented by a single YAML document. An example document follows, with more detailed
-explanation of each component below.
+The goal of this glossary is to increase the awareness of the different definitions of a term, and enable core participants to select or create the definition they are using for a term, assisting infrequent participants' understanding and facilitating smoother collaboration in the IETF standards development process.
 
-```yaml
-term: Glossary # The term itself. Must not be empty, and must be unique within the glossary.
-draft-definitions: # A list of draft RFC's which make use of this term, but have not yet settled on a definition.
-  - url: https://foo.bar/some-draft-location
-    sdo: none
-    label: ietf-draft-oauth2-party-pants-1
-  - url: https://foo.bar/some-other-draft-location
-    sdo: ietf
-    label: ietf-draft-oauth2-rubber-boots-4
-definitions: # A list of definitions from published RFC's, as well as the documents that make use of them.
-  - id: 1 # An incrementing identifier used to uniquely identify a specific definition for a glossary term.
-    source: ## Link type
-      url: https://tools.ietf.org/html/rfc6749
-      sdo: ietf
-      label: rfc-6749 # The source of this definition.
-    text: |
-      this is a definition that makes use of yaml's multi-line parsing. It contains 
-      the text of the definition, as agreed upon by the authors of the published RFC.
-    references: # A list of RFC's that make use of this definition of the term, which are not the origin.
-      - url: https://www.rfc-editor.org/rfc/rfc8628.txt
-        label: OAuth2
-        sdo: ietf
-      - url: https://ietf.org/rfc/rfc8693.txt
-        label: Token Exchange RFC-8693
-        sdo: ietf
-      - url: https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-02.txt
-        label: Transaction Tokens
-        sdo: ietf
-    see-also: # A list of glossary terms within this glossary, and the associated definition.
-      - term: Access Token
-        id: 3
-      - term: Id Token
-        id: 1
-```
+The challenge of the different meanings of terms has become apparent in discussions that include identity related terms. The glossary would initially focus on identity terms and be hosted by the Security Area Group. If this experiment proves useful, it can be expanded to the broader IETF community if desired.
 
-### Links to Documents
-Links to other documents are used in the `draft-definitions` and `definitions` sections. Each link has three components:
+## Glossary Content
 
-- `url`: The URL of the document. This must be a valid URL, and should point to the specific document that uses the term.
-- `sdo`: The standards development organization that published the document. This is a string, and can be any value,
-  with several reserved values.
-- `label`: The label of the document, as it is commonly referred to. This is a string, and can be any value.
+The glossary will contain: terms and definitions used in published (finalized) documents; and references to new terms and definitions being proposed in draft (work in progress) documents. 
 
-Note that, given certain standards organizations, the url may have special meaning. For example, the source of truth
-for IETF RFC's is `https://rfc-editor.org/rfc/`, and the label is the RFC number.
+New definitions for existing terms, or new terms being used in draft documents will not be published in the Glossary until the document has been published. This creates awareness of new terms and definitions, where the work is being done, and prevents other documents referencing a definition that may change or be dropped. The draft document that has a definition for an existing term, or is defining a new term, SHOULD have a reference to the Glossary. This creates awareness of a new definition or term to the broader community who can provide feedback on how the term is used and being defined, and suggestions on using existing definitions, or alternative terms.
 
-### Links to Terms
 
-Links to other glossary terms are used in the `see-also` section, and are formatted as a list of terms with two components:
-- `term`: The term itself, as it appears in the `term` field of the glossary document.
-- `id`: The unique identifier of the definition within the glossary term. This allows for cross-referencing of terms.
+## Glossary Update Process
+
+Updates are processed differently depending on if the update is referencing a published document, or a draft document.
+
+### References to Published Documents
+1. Anyone can propose a new term, definition, or reference by creating a GitHub pull request (PR). A GitHub Action will then run the initial checks that the update meets the update requirements:
+- a. Does not delete a term, definition, or reference for final documents.
+- b. Does not update an existing term.
+- c. New definitions MUST either: 
+  - exist in a final document
+  - consensus on the definition has been reached on the mail list of the working group that created the document
+
+2. A member of the Glossary Team will review the PR and provide feedback to the proposal or submit the PR to the publication queue.
+
+3. Anyone can subscribe to be notified when a PR is promoted to be in the publication queue, and provide comments to the PR.
+
+4. After a minimum of two weeks, a separate member of the Glossary Team will review the PR and will provide feedback and return the PR to the proposer or publish the PR.
+
+5. When a PR is published, a GitHub Action is run that updates the official glossary document.
+
+### References to Draft Documents
+
+1. A draft author can propose a new reference to their draft for an existing term, an existing definition, a new term, or a placeholder for a new definition, or delete a reference to their draft. The draft MUST include a reference to the Glossary.
+
+2. A member of the Glossary Team will review the PR and provide feedback to the proposal, or publish the PR to the official glossary document.
+
+## Draft Documents and the Glossary
+
+The references in the Glossary to drafts that are using a new term, or providing a new definition, is the key task to achieving the goal of creating awareness of the definitions of terms, and how a term is being used.
+
+Draft authors can either: reference an existing definition by providing a reference to the definition in the glossary adding the draft as a reference in the glossary; or create a new definition by writing the definition in the draft and providing a reference to a placeholder for the definition in the glossary. In both cases, there is now a reference to the draft creating awareness for others that a draft is using the term.
+
+If the draft is published and it has a new definition, a PR will be created for the new definition on publication. 
+
+## Seeding the Glossary
+
+The creation of the glossary was motivated by confusion of identity related terms. The id-align group was created to work on aligning identity related work, and its members will be the initial contributors to the glossary, with identity related terms.
+
+## Glossary Build Process
+
+We are proposing using a YAML file for each term, that is named for the term. See [YAML proposal](./yaml.schema.md).
+
+## Open Questions
+
+Locations: 
+- GitHub repository org and name
+- Official hostname and path
+  - ietf.org or rfc-editor.org
+- Definition reference format
+
+Source Document Format:
+* Markdown?
+* [YAML proposal](./yaml.schema.md)
+    
+Official published formats:
+* HTML, PDF, ???
+
+Expired Draft References
+* Are they kept in the glossary, or deleted? (deleted after a while as they are only references)
+    
+Glossary Team
+* Who are the initial members (from id-align)? How are new members added? 
+
+
+## FAQ
+
+Q1: Can the glossary be normatively referenced?
+- No. The glossary is intended for informative references.
+
+Q2: How will consensus be achieved on the definition of a term?
+- The glossary project is not creating definitions, it is gathering existing definitions from existing documents. If a term is used in a published document, then the individuals that created that document will gather consensus on the definition on how the term was used in that document.
+
+Q3: Why not allow working documents to define new terms before they are published?
+- We don't want other documents  to reference a term and definitions that may change. Only terms / definitions that have been published are included in the Glossary, and those are never updated.
+
+Q4: How will new terms and definitions from working documents be added to the Glossary?
+- When a working document is published, the new term, or new definition to an existing term will be added to the glossary.
+
+
