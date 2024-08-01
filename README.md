@@ -15,6 +15,11 @@ to a convergence of vocabulary usage.
 
 [Here is a sample](./sample.glossary.md)
 
+## Why Not an RFC?
+
+The glossary will not be an RFC, but will be _defined_ by an RFC. This is intentional, as we expect the glossary
+to grow as new standards are published, new terms are introduced, and new standards adopt these definitions.
+
 ## Motivation
 
 The development of standards in the IETF requires extensive discussions that are essential to ensure consensus on the issues at hand. Many of these standards introduce concepts that are novel, and existing terms are used to describe the novel concept. While the core participants are usually aligned on the specific meaning behind a term, they may not be aware of other definitions of a term. Infrequent participants may have a different definition in mind when encountering a term, leading to misunderstandings and a lack of consensus.
