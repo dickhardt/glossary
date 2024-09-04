@@ -1,0 +1,26 @@
+term: DPoP Proof JWT
+definitions:
+  - id: 1
+    source:
+      url: https://www.rfc-editor.org/rfc/rfc9449.html#name-dpop-proof-jwts
+      sdo: ietf
+      label: RFC 9449 §4
+    text: |
+      DPoP introduces the concept of a DPoP proof, which is a JWT created by the client and sent with an HTTP request
+      using the DPoP header field. Each HTTP request requires a unique DPoP proof.
+      
+      A valid DPoP proof demonstrates to the server that the client holds the private key that was used to sign the
+      DPoP proof JWT. This enables authorization servers to bind issued tokens to the corresponding public key
+      (as described in Section 5) and enables resource servers to verify the key-binding of tokens that it
+      receives (see Section 7.1), which prevents said tokens from being used by any entity that does not
+      have access to the private key.
+      
+      The DPoP proof demonstrates possession of a key and, by itself, is not an authentication or access control
+      mechanism. When presented in conjunction with a key-bound access token as described in Section 7.1,
+      the DPoP proof provides additional assurance about the legitimacy of the client to present the access token.
+      However, a valid DPoP proof JWT is not sufficient alone to make access control decisions.
+    see-also:
+      - term: Access Token
+        id: 1
+      - term: Bearer Token
+        id: 1

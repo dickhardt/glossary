@@ -1,0 +1,15 @@
+term: Bearer Token
+definitions:
+  - id: 1
+    source:
+      url: https://www.rfc-editor.org/rfc/rfc6750.html#section-1.2
+      sdo: ietf
+      label: RFC 6750 §1.2
+    text: |
+      A security token with the property that any party in possession of the token (a "bearer") can
+      use the token in any way that any other party in possession of it can.  Using a bearer token does not
+      require a bearer to prove possession of cryptographic key material (proof-of-possession)
+    see-also:
+      - term: Access Token
+        id: 1
+

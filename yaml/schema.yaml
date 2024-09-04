@@ -1,0 +1,20 @@
+term: str()
+definitions: list(include('glossary-term-definition'), min=1)
+draft-definitions: list(include('glossary-term-reference'), required=False)
+
+---
+glossary-term-definition:
+  id: int()
+  source: include('glossary-term-reference')
+  text: str()
+  references: list(include('glossary-term-reference'), required=False)
+  see-also: list(include('glossary-term-link'), required=False)
+
+glossary-term-link:
+  term: str()
+  id: int()
+
+glossary-term-reference:
+  url: str(format='uri')
+  sdo: enum('ietf', 'w3c', 'oidc', 'iso', 'oasis')
+  label: str()
